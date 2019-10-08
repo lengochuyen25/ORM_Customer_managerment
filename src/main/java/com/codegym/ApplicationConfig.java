@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.format.FormatterRegistrar;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -41,8 +42,10 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan("com.codegym")
+
 @EnableJpaRepositories("com.codegym.repository")
+@ComponentScan("com.codegym")
+@EnableSpringDataWebSupport
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
